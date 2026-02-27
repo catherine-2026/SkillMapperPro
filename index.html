@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>SKILL MAPPER - AFTER PILOT TEST 1</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div id="app-container">
+  <nav class="app-nav">
+    <button onclick="showSection('words')" class="nav-btn active" id="btn-words">Skill Mapper</button>
+    <button onclick="showSection('feedback')" class="nav-btn" id="btn-feedback">Community Feedback</button>
+  </nav>
+
+  <div id="section-words" class="view-section">
+    <header>
+      <h1 class="title-main">SKILL MAPPER PRO</h1>
+      <p class="subtitle">Electrical Engineering Edition: Identify, Define, and Build Professional Impact.</p>
+    </header>
+
+    <div class="main-layout">
+      <div class="keyword-area">
+        <h3 class="section-title">1. Skill Categories</h3>
+        <div id="skill-accordion"></div>
+      </div>
+
+      <div class="construction-area">
+        <div id="definition-box" class="info-note">
+          <strong>💡 Skill Insight:</strong>
+          <p id="skill-meaning">Select a sub-skill to see its professional application.</p>
+        </div>
+
+        <h3 class="section-title">2. Selected Keywords <small>(Click to remove)</small></h3>
+        <div id="selected-tags" class="tag-cloud">
+          <span class="placeholder">Selection empty...</span>
+        </div>
+
+        <h3 class="section-title">3. Narrative Builder</h3>
+        <select id="phrase-picker">
+          <option value="">-- Select Professional Starter --</option>
+          <option value="aptitude">I possess a robust technical aptitude in...</option>
+          <option value="mastery">My background is defined by my mastery of...</option>
+          <option value="leveraging">Leveraging an extensive hands-on history with...</option>
+        </select>
+
+        <input type="text" id="impact-input" placeholder="Enter result (e.g., ensuring 100% safety compliance)">
+        
+        <div class="sample-list">
+          <small>Samples:</small>
+          <button onclick="useImpact('ensuring 100% safety compliance')">Safety</button>
+          <button onclick="useImpact('reducing system downtime by 20%')">Efficiency</button>
+          <button onclick="useImpact('optimizing resource allocation')">Cost</button>
+        </div>
+
+        <button onclick="aiRestructure()" class="btn-ai">🤖 Generate Narrative</button>
+
+        <div id="sentence-output" class="hidden output-box">
+          <div class="ai-badge">📝 Professional Editor:</div>
+          <textarea id="generated-sentence" rows="4" class="editable-output"></textarea>
+          
+          <div id="grammar-tips" class="grammar-hint hidden"></div>
+
+          <div class="btn-group">
+            <button onclick="checkGrammar()" class="btn-check">🔍 Check Grammar</button>
+            <button onclick="copyToClipboard('generated-sentence')" class="copy-btn">📋 Copy Final</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="section-feedback" class="view-section hidden">
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
